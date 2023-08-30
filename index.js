@@ -1,6 +1,17 @@
+/* llamando las dependencias importadas */
 import 'dotenv/config';
-import app from "./src/app";
+import app from "./src/app.js";
+import { sequelize } from './src/database/connectionDB.js';
 
-const port = 3000 || process.env.PORT;
+/* Levantando el servidor */
+const port = 3002 || process.env.PORT;
 
-app.listen(port, () => console.log('El servidor esta corriendo en el puerto ${port}'));
+(async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('La conexión se ha establecido satisfactoriamente.');
+        app.listen(port, () => console.log(`El servidor esta corriendo en el puerto ${port}`));
+    } catch (error) {
+        console.error('No se pudo conectar a la base de datos:', error);
+    }
+})
