@@ -1,6 +1,6 @@
 /* llamando las dependencias importadas */
 import 'dotenv/config';
-import app from "./src/app.js";
+import app from "./src/app";
 import { sequelize } from './src/database/connectionDB.js';
 
 /* Levantando el servidor */
