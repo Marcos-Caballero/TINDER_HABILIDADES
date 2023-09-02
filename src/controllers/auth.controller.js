@@ -74,9 +74,37 @@ export const registerCompany = async (req, res) => {
     }
 
 /* Variables para iniciar sesion */
-export const loginUser = (req, res) => {
-    res.send('register')
+export const loginUser = async (req, res) => {
+    const { email, password, type } = req.body;
+    const hash = req.body.password;
+    let model;
+
+    type === 'user' ? model = User : model = Company;
+
+    try {
+        const account = await model.findOne({
+            where: {
+                email,
+                status: 'activo'
+            }
+        })
+        if(!account) return res.status(400).json({
+            message: 'Información errada, intente nuevamente.'
+        })
+        const validPassword = bcrypt.compareSync(hash, account.password);
+        if(!validPassword) return res.status(400).json({
+            message: "Contraseña inválida, por favor intente nuevamente."
+        })
+        res.status(200).json({
+            ok: true,
+            uuid: account.id,
+            message: 'inicio de sesión exitoso.'
+        })
+        res.send('login')
+    }
+    catch (error) {
+    }
 }
 export const loginCompany = (req, res) => {
-    res.send('register')
+    res.send('login')
 }
