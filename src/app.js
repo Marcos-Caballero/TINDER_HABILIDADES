@@ -1,12 +1,14 @@
 /* Levantando express */
 import express from "express";
+/* Importando rutas */
+import authRouter from './routes/auth.routes.js'
 
 const app = express ();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('hola mundo')
-});
+/* Rutas */
+app.use('/api/auth', authRouter);
+
 /* Guardar todo lo anterior para exportarlo y usarlo en otro lugar */
 export default app;
