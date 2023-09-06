@@ -1,5 +1,6 @@
 /* Trayendo lo necesario desde express */
 import { Router } from "express";
+/* Trayendo las variables de los controladores */
 import { addSkills, deleteUser, getUserById, getUsers, updateUser } from "../controllers/user.controller.js"
 
 /* Creando el enrutador */
