@@ -23,29 +23,7 @@ export const getUsers = async (req, res) => {
             message: error.message})
     }
 }
-/* Actualizar informacion adicional del usuario */
-export const updateUser = async (req, res) => {
-    const { id } = req.params;
 
-    try {
-        const user = await User.findByPk(id);
-        if(!user) return res.status(404).json({
-            message: 'Usuario no encontrado.'
-        })
-    
-        user.set(req.body)
-        await user.save();
-
-        res.status(200).json({
-            ok: true,
-            message: '¡El perfil se ha actualizado exitosamente!'
-        })
-
-    } catch (error) {
-        res.status(500).json({
-            message: error.message})
-    }
-}
 /* Encontrar al usuario segun su ID */
 export const getUserById = async (req, res) => {
     const { id } = req.params;
