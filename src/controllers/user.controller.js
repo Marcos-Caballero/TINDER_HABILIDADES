@@ -19,7 +19,7 @@ const { skill } = req.query
                 through: { attributes: [] },
                 where: {
                     name: {
-                        [Op.substring]: `${Skill}`
+                        [Op.substring]: `${skill}`
                     } 
                 }
             }
