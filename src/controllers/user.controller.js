@@ -1,8 +1,10 @@
 /* Importar información de la base de datos */
-import { User, Skill } from "../database/connectionDB.js"
+import { User, Skill } from "../database/connectionDB.js";
+import { Op } from "sequelize";
 
 /* Encontrar los usuarios de la base */
 export const getUsers = async (req, res) => {
+const { skill } = req.query
     try {
         const users = await User.findAll({
             where: {
@@ -14,7 +16,12 @@ export const getUsers = async (req, res) => {
             include: {
                 model: Skill,
                 attributes: ['name'],
-                through: { attributes: [] }
+                through: { attributes: [] },
+                where: {
+                    name: {
+                        [Op.substring]: `${Skill}`
+                    } 
+                }
             }
         });
         res.status(200).json(users);

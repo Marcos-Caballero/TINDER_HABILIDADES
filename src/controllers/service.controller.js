@@ -88,22 +88,22 @@ export const getServicesByUser = async (req, res) => {
     }
 }
 
-/* Actualizar informacion adicional del usuario */
-export const updateUser = async (req, res) => {
+/* Actualizar estado del servicio */
+export const updateService = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const user = await User.findByPk(id);
-        if(!user) return res.status(404).json({
+        const service = await Service.findByPk(id);
+        if(!service) return res.status(404).json({
             message: 'Usuario no encontrado.'
         })
     
-        user.set(req.body)
-        await user.save();
+        service.set(req.body)
+        await service.save();
 
         res.status(200).json({
             ok: true,
-            message: '¡El perfil se ha actualizado exitosamente!'
+            message: '¡El servicio se ha actualizado exitosamente!'
         })
 
     } catch (error) {
