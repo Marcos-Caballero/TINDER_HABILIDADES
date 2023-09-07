@@ -16,6 +16,5 @@ app.use('/api/users', userRouter);
 app.use('/api/services', serviceRouter);
 app.use('/api/companies', companyRouter);
 
-
 /* Guardar todo lo anterior para exportarlo y usarlo en otro lugar */
 export default app;

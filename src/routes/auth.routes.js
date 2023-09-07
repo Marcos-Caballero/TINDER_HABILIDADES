@@ -7,7 +7,7 @@ import { registerUser, registerCompany } from '../controllers/auth.controller.js
 const router = Router();
 
 /* creacion de usuarios */
-router.post('/register', registerUser);
+router.post('/register', registerUser);     
 router.post('/register/company', registerCompany);
 
 export default router;
