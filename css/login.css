@@ -1,14 +1,32 @@
 /* Contenedor principal */
 main {
-    background-image: url('/images/register\ background.jpg'); /* Reemplaza 'nombre-de-tu-imagen.jpg' con el nombre de tu imagen de fondo */
+    background-image: url('/images/LOGIN_BG.jpg'); /* Reemplaza 'nombre-de-tu-imagen.jpg' con el nombre de tu imagen de fondo */
     background-size: contain; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-repeat: repeat; /* Evita que la imagen se repita */
     background-position: center; /* Centra la imagen en el contenedor */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
 }
+
+/* Estilo para el contenedor principal */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100%; /* Toma toda la altura de la ventana */
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Estilo para el formulario */
 form {
@@ -53,16 +71,6 @@ button[type="submit"]:hover {
     align-items: center;
 }
 
-/* Estilo para el enlace de registro */
-#register-container a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-#register-container a:hover {
-    text-decoration: underline;
-}
-
 /* Estilo para el pie de página (footer) */
 footer {
     text-align: center;
@@ -73,12 +81,11 @@ footer {
 
 /* En el archivo "register.css" */
 .registration-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente los elementos en la columna */
-    text-align: center; /* Alinea el texto del formulario al centro */
-    max-width: 600px; /* Opcional: establece un ancho máximo para el formulario */
-}
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f8f8f8;
+}   
 
 /* Estilo para el botón de registro */
 button[type="submit"] {
