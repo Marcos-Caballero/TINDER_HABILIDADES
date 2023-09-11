@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="../src/app.js"></script>
+    <script src="../js/login.js"></script>
     <title>Iniciar Sesión</title>
 </head>
 <body>
@@ -13,7 +15,7 @@
     </header>
     <main >
         <section class="login-container">
-            <form action="/api/auth/login" method="POST">
+            <form action="/api/auth/login" method="POST" id="loginForm">
                 <!-- Campo de Correo Electrónico -->
                 <label for="correo">Correo Electrónico:</label>
                 <input type="email" id="correo" name="correo" required>
