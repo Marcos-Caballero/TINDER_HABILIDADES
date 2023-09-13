@@ -1,96 +1,100 @@
-/* Contenedor principal */
 main {
-    background-image: url('/images/register\ background.jpg'); /* Reemplaza 'nombre-de-tu-imagen.jpg' con el nombre de tu imagen de fondo */
-    background-size: contain; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-    background-repeat: repeat; /* Evita que la imagen se repita */
-    background-position: center; /* Centra la imagen en el contenedor */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    height: 36rem;
+    background-color: white;
 }
 
-/* Estilo para el formulario */
-form {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Estilos CSS para el botón y el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden; 
 }
 
-/* Estilo para etiquetas de formulario */
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.modal-content {
+    background-color: white;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 30%; 
+    margin: 2% auto;
+    padding: 1.5rem;
+    overflow-y: auto; 
 }
 
-/* Estilo para campos de entrada de texto y select */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-    width: 94%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Estilo para el botón de registro */
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+.close {
+    float: right;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+/* Estilos CSS para el formulario dentro del modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-/* Estilo para el enlace de registro */
-#register-container a {
-    color: #007bff;
-    text-decoration: none;
+.modal-content label {
+    margin-bottom: 0.25rem;
+    text-align: left;
+    width: 100%;
 }
 
-#register-container a:hover {
-    text-decoration: underline;
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 0.3rem 1rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
 
-/* Estilo para el pie de página (footer) */
-footer {
+.modal-content button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para eliminar el margen inferior del último input */
+.modal-content input:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos CSS para la sección de opciones */
+#options {
     text-align: center;
-    padding: 10px;
+}
+
+#options h2 {
+    margin-bottom: 0.625rem; 
+}
+
+#options button {
+    display: inline-block;
     background-color: #3498db;
     color: #fff;
-}
-
-/* En el archivo "register.css" */
-.registration-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente los elementos en la columna */
-    text-align: center; /* Alinea el texto del formulario al centro */
-    max-width: 600px; /* Opcional: establece un ancho máximo para el formulario */
-}
-
-/* Estilo para el botón de registro */
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 0.3125rem 0.625rem; 
+    margin: 0.15625rem 0.3125rem; 
+    font-size: 1.3rem;
     cursor: pointer;
-    margin-top: 20px; /* Agrega un margen superior para separar el botón de otros elementos */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+#options button:last-child {
+    margin-right: 0;
 }
+
