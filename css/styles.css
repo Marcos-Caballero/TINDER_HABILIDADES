@@ -112,6 +112,7 @@ h3 a:hover {
     padding: 1%;
     position: relative;
     font-size: 0.9em; 
+    z-index: unset;
 }
 
 .footer-left {

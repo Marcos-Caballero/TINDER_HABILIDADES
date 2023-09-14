@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/login.js"></script>
     <script src="/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <title>Tinder para habilidades</title>
 </head>
 <body>
-
     <header>
         <h1>Tinder para habilidades</h1>
     </header>
@@ -21,15 +23,45 @@
                 <h2>¡Bienvenido!</h2>
                 <span>Selecciona tu forma de inicio de sesión</span>
                 <div class="button-container">
-                        <a href="/pages/user_login.html"><button id="userButton" type="button" data-action="loginUser">Usuario</button></a>
-                    <a href="/pages/company_login.html">
-                        <button id="companyButton" type="button" data-action="loginCompany">Empresa</button>
-                    </a>
+                    <button id="userButton" type="button" data-action="loginUser" onclick="openModal('userModal')">Usuario</button>
+                    <button id="companyButton" type="button" data-action="loginCompany" onclick="openModal('companyModal')">Empresa</button>
                 </div>
                 <div id="register-container">
                     <h3><a href="/pages/register.html">¿No tienes cuenta? Regístrate</a></h3>
                 </div>
             </form>
+        </section>
+        <!-- Modal para Usuario -->
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('userModal')">&times;</span>
+                <h2>Iniciar Sesión como Usuario</h2>
+                <form id="userLoginForm">
+                    <label for="userEmail">Correo:</label>
+                    <input type="email" id="userEmail" required>
+                    <label for="userPassword">Contraseña:</label>
+                    <input type="password" id="userPassword" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Modal para Empresa -->
+        <div id="companyModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('companyModal')">&times;</span>
+                <h2>Iniciar Sesión como Empresa</h2>
+                <form>
+                    <label for="companyNit">NIT:</label>
+                    <input type="text" id="companyNit" required>
+                    <label for="companyEmail">Correo:</label>
+                    <input type="email" id="companyEmail" required>
+                    <label for="companyPassword">Contraseña:</label>
+                    <input type="password" id="companyPassword" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
         </section>
     </main>
     <footer class="footer-container">
